@@ -1,0 +1,11 @@
+/target/
+.apk
+.metadata
+.settings
+.project
+.classpath
+target
+/logs
+/bin
+database.properties
+mail.properties
