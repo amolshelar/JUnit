@@ -4,7 +4,7 @@ public interface CustomerDAO {
 
 	Customer getCustomer(String name);
 
-	boolean saveCustomer(Customer customer);
+	Customer saveCustomer(Customer customer);
 
 	void deleteCustomer(Integer id);
 

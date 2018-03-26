@@ -2,8 +2,10 @@ package junit.training.employee;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.fail;
 
+import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
@@ -11,6 +13,21 @@ import org.junit.rules.ExpectedException;
 public class EmployeeServiceTest {
 
 	EmployeeService employeeService = new EmployeeService();
+
+	@Test
+	public void testNameFound() {
+		String name = employeeService.findNameById(1);
+
+		assertNotNull(name);
+		assertEquals(name, "Amol");
+	}
+
+	@Test
+	public void testNameNotFoundException() {
+		String name = employeeService.findNameById(3);
+
+		assertNull(name);
+	}
 
 	@Test(expected = IllegalArgumentException.class)
 	public void testIllegalArgumentException() {
@@ -38,18 +55,12 @@ public class EmployeeServiceTest {
 		employeeService.findNameById(null);
 	}
 
+	@Ignore
 	@Test
-	public void testNameFound() {
-		String name = employeeService.findNameById(1);
-
-		assertEquals(name, "Amol");
+	public void testFloatingPointAssertions() {
+		double expectedTaxAmout = 10.005;
+		double actualTaxAmout = 10.004;
+		// assertEquals(10.004, 10.005);
+		assertEquals(expectedTaxAmout, actualTaxAmout, 0.002);
 	}
-
-	@Test
-	public void testNameNotFoundException() {
-		String name = employeeService.findNameById(3);
-
-		assertNull(name);
-	}
-
 }

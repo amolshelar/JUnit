@@ -36,7 +36,7 @@ public class CustomerServiceTest {
 
 	@Test
 	public void testAddCustomerReturnsNewCustomer() {
-		//when(daoMock.saveCustomer(any(Customer.class))).thenReturn(new Customer());
+		when(daoMock.saveCustomer(any(Customer.class))).thenReturn(new Customer());
 
 		Customer customer = new Customer();
 		assertThat(customerService.addCustomer(customer), is(notNull()));

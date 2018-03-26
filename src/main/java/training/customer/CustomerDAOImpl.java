@@ -20,9 +20,9 @@ public class CustomerDAOImpl implements CustomerDAO {
 		return null;
 	}
 
-	public boolean saveCustomer(Customer customer) {
+	public Customer saveCustomer(Customer customer) {
 		// TODO Auto-generated method stub
-		return false;
+		return null;
 	}
 
 	public void deleteCustomer(Integer id) {

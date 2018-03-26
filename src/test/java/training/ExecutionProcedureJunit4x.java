@@ -4,12 +4,12 @@ import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 
 public class ExecutionProcedureJunit4x {
 
-	// execute only once, in the starting e.g. Database connection, connection
-	// pool
+	// execute only once, in the starting e.g. Database connection, connection pool
 	@BeforeClass
 	public static void beforeClass() {
 		System.out.println("@BeforeClass - in before class");
@@ -21,8 +21,7 @@ public class ExecutionProcedureJunit4x {
 		System.out.println("\n@AfterClass - in after class");
 	}
 
-	// execute for each test, before executing test e.g. Creating an similar
-	// object and share for all @Test
+	// execute for each test, before executing test e.g. Creating an similar object and share for all @Test
 	@Before
 	public void before() {
 		System.out.println("\n@Before - in before");
@@ -44,5 +43,12 @@ public class ExecutionProcedureJunit4x {
 	@Test
 	public void myTestCase2() {
 		System.out.println("@Test - in test case 2");
+	}
+
+	// test case 3 (Ignored)
+	@Ignore
+	@Test
+	public void myTestCase3() {
+		System.out.println("@Test - in test case 3");
 	}
 }

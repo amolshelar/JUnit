@@ -16,8 +16,8 @@ public class Assert {
 	@Test
 	public void testAssertBoolean() {
 		assertTrue(userExists(1));
-		// assertFalse(userExists(0));
-		assertTrue("User doesn't exists", userExists(0));
+		assertFalse(userExists(0));
+		// assertTrue("User doesn't exists", userExists(0));
 	}
 
 	public String getName(int id) {
@@ -30,14 +30,13 @@ public class Assert {
 
 	@Test
 	public void testAsserts() {
-		assertEquals((2+3),5);
-		
+		assertEquals((2 + 3), 5);
+
 		assertNull(getName(0));
 		assertNotNull(getName(1));
 
 		assertEquals(getName(1), "Amol");
 		// assertEquals(getName(1), "amol");
 		// assertEquals("failuer – string not equal", getName(1), "amol");
-		assertEquals("Amol", "amol", 1);
 	}
 }

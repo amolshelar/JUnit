@@ -4,8 +4,9 @@ import java.util.List;
 
 public class Portfolio {
 
-	private StockService stockService;
 	private List<Stock> stocks;
+	
+	private StockService stockService;
 
 	public double getMarketValue() {
 		int marketValue = 0;
